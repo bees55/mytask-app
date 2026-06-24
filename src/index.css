@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Lora", Georgia, serif;
+  --font-sans: "Plus Jakarta Sans", "Inter", system-ui, sans-serif;
+  
+  --color-brand-bg: #FFF4EB;
+  --color-brand-biscuit: #F6E0B6;
+  --color-brand-slate: #A6BCC9;
+  --color-brand-navy: #3E4B8E;
+  --color-brand-plum: #3D1534;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-brand-bg);
+    color: var(--color-brand-plum);
+    font-family: var(--font-sans);
+    min-height: 100vh;
+  }
+  
+  h1, h2, h3, .font-serif-title {
+    font-family: var(--font-serif);
+  }
+}
+
+/* --- Bold Typography & Brutalist Retro Classes --- */
+
+/* Thick borders */
+.bold-border {
+  border: 2px solid var(--color-brand-plum);
+}
+
+.bold-border-b {
+  border-bottom: 2px solid var(--color-brand-plum);
+}
+
+.bold-border-l {
+  border-left: 2px solid var(--color-brand-plum);
+}
+
+.bold-border-t {
+  border-top: 2px solid var(--color-brand-plum);
+}
+
+.bold-border-r {
+  border-right: 2px solid var(--color-brand-plum);
+}
+
+/* Flat solid buttons & inputs */
+.brutalist-input {
+  border: 2px solid var(--color-brand-plum);
+  background-color: white;
+  transition: all 0.1s ease;
+}
+
+.brutalist-input:focus {
+  background-color: var(--color-brand-biscuit);
+  outline: none;
+}
+
+/* Brutalist solid offset container shadow */
+.brutalist-card-offset {
+  position: relative;
+  background-color: white;
+  border: 2px solid var(--color-brand-plum);
+}
+
+.brutalist-card-offset::after {
+  content: '';
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  width: 100%;
+  height: 100%;
+  border: 2px solid var(--color-brand-plum);
+  background-color: var(--color-brand-slate);
+  z-index: -1;
+  pointer-events: none;
+  transition: transform 0.15s ease-out;
+}
+
+.brutalist-card-offset:hover::after {
+  transform: translate(-3px, -3px);
+}
+
+/* Dynamic offset with a biscuit gold accent background */
+.brutalist-card-offset-accent {
+  position: relative;
+  background-color: white;
+  border: 2px solid var(--color-brand-plum);
+}
+
+.brutalist-card-offset-accent::after {
+  content: '';
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  width: 100%;
+  height: 100%;
+  border: 2px solid var(--color-brand-plum);
+  background-color: var(--color-brand-biscuit);
+  z-index: -1;
+  pointer-events: none;
+  transition: transform 0.15s ease-out;
+}
+
+.brutalist-card-offset-accent:hover::after {
+  transform: translate(-3px, -3px);
+}
+
+/* Flat shadow action indicators */
+.brutalist-btn {
+  background-color: var(--color-brand-navy);
+  color: white;
+  border: 2px solid var(--color-brand-plum);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  transition: all 0.1s ease;
+  box-shadow: 3px 3px 0px var(--color-brand-plum);
+}
+
+.brutalist-btn:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 4px 4px 0px var(--color-brand-plum);
+}
+
+.brutalist-btn:active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0px var(--color-brand-plum);
+}
+
+.brutalist-btn-secondary {
+  background-color: white;
+  color: var(--color-brand-plum);
+  border: 2px solid var(--color-brand-plum);
+  font-weight: 800;
+  text-transform: uppercase;
+  transition: all 0.1s ease;
+  box-shadow: 3px 3px 0px var(--color-brand-plum);
+}
+
+.brutalist-btn-secondary:hover {
+  background-color: var(--color-brand-biscuit);
+  transform: translate(-1px, -1px);
+  box-shadow: 4px 4px 0px var(--color-brand-plum);
+}
+
+/* Custom Scrollbar for elegant aesthetics */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #FFF4EB;
+  border-left: 2px solid var(--color-brand-plum);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-brand-plum);
+  border: 2px solid var(--color-brand-plum);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-brand-slate);
+}
