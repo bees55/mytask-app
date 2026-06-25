@@ -271,7 +271,7 @@ async function startServer() {
     app.use(express.static(distPath));
     
     // SPA routing - always fallback to index.html
-    app.get("(.*)", (req, res) => {
+    app.get("/*", (req, res) => {
       res.sendFile(path.join(distPath, "index.html"));
     });
     console.log("Production static files server loaded.");
