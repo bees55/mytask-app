@@ -9,7 +9,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 // Ensure database directory exists
 const DATA_DIR = path.join(process.cwd(), "data");
@@ -271,7 +271,7 @@ async function startServer() {
     app.use(express.static(distPath));
     
     // SPA routing - always fallback to index.html
-    app.get("*", (req, res) => {
+    app.get("(.*)", (req, res) => {
       res.sendFile(path.join(distPath, "index.html"));
     });
     console.log("Production static files server loaded.");
